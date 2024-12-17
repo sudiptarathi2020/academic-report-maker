@@ -1,10 +1,11 @@
-.PHONY: install run test migrate makemigrations collectstatic clean
+.PHONY: install run test test-app migrate makemigrations collectstatic clean
 
 # Variables
 PYTHON = python3
-MANAGE = $(PYTHON) manage.py
-REQUIREMENTS = requirements.txt
-STATIC_DIR = static
+BACKEND_DIR = backend
+MANAGE = $(PYTHON) $(BACKEND_DIR)/manage.py
+REQUIREMENTS = $(BACKEND_DIR)/requirements.txt
+STATIC_DIR = $(BACKEND_DIR)/static
 
 # Install project dependencies
 install:
@@ -15,7 +16,7 @@ install:
 run:
 	$(MANAGE) runserver 0.0.0.0:8000
 
-# Run tests
+# Run all tests
 test:
 	$(MANAGE) test --verbosity=2
 
