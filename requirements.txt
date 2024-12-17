@@ -1,0 +1,9 @@
+Django
+django-dotenv
+asgiref
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+pep8
+sphinx
+flake8
